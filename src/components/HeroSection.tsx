@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronDown, Sparkles, Cpu, Database } from 'lucide-react';
+import { ChevronDown, Sparkles, Cpu, Database, Github, Linkedin, Award } from 'lucide-react';
 
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState('');
@@ -82,6 +82,34 @@ const HeroSection = () => {
               <span className="text-blue-400 font-semibold"> AI, ML, and data science</span>. 
               Transforming complex problems into elegant solutions.
             </p>
+
+            {/* Social media icons */}
+            <div className="flex justify-center space-x-6 mb-8">
+              <a
+                href="https://github.com/ritesh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-slate-800/50 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700/50 transition-all duration-300 hover:scale-110 border border-slate-700 hover:border-cyan-400/50"
+              >
+                <Github className="w-6 h-6" />
+              </a>
+              <a
+                href="https://linkedin.com/in/ritesh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-slate-800/50 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700/50 transition-all duration-300 hover:scale-110 border border-slate-700 hover:border-cyan-400/50"
+              >
+                <Linkedin className="w-6 h-6" />
+              </a>
+              <a
+                href="https://kaggle.com/ritesh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-slate-800/50 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700/50 transition-all duration-300 hover:scale-110 border border-slate-700 hover:border-cyan-400/50"
+              >
+                <Award className="w-6 h-6" />
+              </a>
+            </div>
 
             {/* Highlighted expertise */}
             <div className="flex flex-wrap justify-center gap-4 mb-12">

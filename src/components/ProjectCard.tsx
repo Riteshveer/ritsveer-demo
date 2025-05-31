@@ -19,6 +19,7 @@ interface Project {
   description: string;
   thumbnail: string;
   tags: string[];
+  category: string;
   fullDescription: string;
 }
 
@@ -31,7 +32,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
   return (
     <>
-      <Card className="group bg-slate-800/50 backdrop-blur-sm border-slate-700 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 overflow-hidden">
+      <Card className="group bg-slate-800/50 backdrop-blur-sm border-slate-700 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 overflow-hidden h-full">
         <div className="relative overflow-hidden">
           <img 
             src={project.thumbnail} 
@@ -51,10 +52,10 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </div>
         
         <CardHeader>
-          <CardTitle className="text-white group-hover:text-cyan-400 transition-colors duration-300">
+          <CardTitle className="text-white group-hover:text-cyan-400 transition-colors duration-300 text-lg">
             {project.title}
           </CardTitle>
-          <CardDescription className="text-slate-300">
+          <CardDescription className="text-slate-300 text-sm">
             {project.description}
           </CardDescription>
         </CardHeader>
@@ -65,7 +66,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               <Badge 
                 key={tag} 
                 variant="secondary" 
-                className="bg-slate-700/50 text-slate-300 border-slate-600 hover:bg-slate-600 transition-colors duration-300"
+                className="bg-slate-700/50 text-slate-300 border-slate-600 hover:bg-slate-600 transition-colors duration-300 text-xs"
               >
                 {tag}
               </Badge>
@@ -76,17 +77,17 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             <Button 
               variant="outline" 
               size="sm" 
-              className="flex-1 border-slate-600 text-slate-300 hover:bg-slate-700"
+              className="flex-1 border-slate-600 text-slate-300 hover:bg-slate-700 text-xs"
             >
-              <Github className="w-4 h-4 mr-2" />
+              <Github className="w-3 h-3 mr-1" />
               Code
             </Button>
             <Button 
               variant="outline" 
               size="sm" 
-              className="flex-1 border-slate-600 text-slate-300 hover:bg-slate-700"
+              className="flex-1 border-slate-600 text-slate-300 hover:bg-slate-700 text-xs"
             >
-              <ExternalLink className="w-4 h-4 mr-2" />
+              <ExternalLink className="w-3 h-3 mr-1" />
               Demo
             </Button>
           </div>
