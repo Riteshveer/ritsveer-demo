@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Phone, ArrowUp, FileText, Award, Brain, Code, Database } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -126,13 +127,6 @@ const Index = () => {
     { name: "FastAPI", level: 85, category: "Backend" }
   ];
 
-  const links = [
-    { name: "GitHub", icon: Github, url: "https://github.com/ritesh", description: "Open source projects and code repositories" },
-    { name: "LinkedIn", icon: Linkedin, url: "https://linkedin.com/in/ritesh", description: "Professional network and achievements" },
-    { name: "Kaggle", icon: Award, url: "https://kaggle.com/ritesh", description: "Data science competitions and datasets" },
-    { name: "Resume", icon: FileText, url: "#", description: "Download detailed resume and credentials" }
-  ];
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -145,7 +139,7 @@ const Index = () => {
       <nav className="fixed top-0 w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            <div className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
               Ritesh
             </div>
             <div className="hidden md:flex space-x-8">
@@ -153,7 +147,7 @@ const Index = () => {
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="text-slate-300 hover:text-cyan-400 transition-colors duration-300 relative group"
+                  className="text-slate-300 hover:text-cyan-400 transition-colors duration-300 relative group text-sm"
                 >
                   {item}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
@@ -173,29 +167,49 @@ const Index = () => {
       <section id="experience" className="relative z-10 py-20 px-6">
         <div className="container mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
               Experience & Credentials
             </h2>
+            
+            {/* Statistics Section */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+              <div className="text-center animate-fade-in">
+                <div className="text-2xl md:text-3xl font-bold text-cyan-400 mb-2">10+</div>
+                <div className="text-slate-400 text-xs uppercase tracking-wider">PROJECTS</div>
+              </div>
+              <div className="text-center animate-fade-in" style={{ animationDelay: '0.1s' }}>
+                <div className="text-2xl md:text-3xl font-bold text-cyan-400 mb-2">15+</div>
+                <div className="text-slate-400 text-xs uppercase tracking-wider">ML MODELS</div>
+              </div>
+              <div className="text-center animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                <div className="text-2xl md:text-3xl font-bold text-cyan-400 mb-2">5+</div>
+                <div className="text-slate-400 text-xs uppercase tracking-wider">HACKATHONS</div>
+              </div>
+              <div className="text-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
+                <div className="text-2xl md:text-3xl font-bold text-cyan-400 mb-2">3+</div>
+                <div className="text-slate-400 text-xs uppercase tracking-wider">TECHNOLOGIES</div>
+              </div>
+            </div>
           </div>
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 hover:border-cyan-400/50 transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-4 text-cyan-400">Academic Journey</h3>
-                <p className="text-slate-300 mb-4">
+                <h3 className="text-lg font-bold mb-4 text-cyan-400">Academic Journey</h3>
+                <p className="text-slate-300 mb-4 text-sm">
                   Pursuing B-Tech in AI/ML (2023–2027) at PCET's Pimpri Chinchwad University, 
                   focusing on cutting-edge technologies and practical applications.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="secondary" className="bg-cyan-900/30 text-cyan-300 border-cyan-600">Deep Learning</Badge>
-                  <Badge variant="secondary" className="bg-blue-900/30 text-blue-300 border-blue-600">Generative AI</Badge>
-                  <Badge variant="secondary" className="bg-purple-900/30 text-purple-300 border-purple-600">MLOps</Badge>
+                  <Badge variant="secondary" className="bg-cyan-900/30 text-cyan-300 border-cyan-600 text-xs">Deep Learning</Badge>
+                  <Badge variant="secondary" className="bg-blue-900/30 text-blue-300 border-blue-600 text-xs">Generative AI</Badge>
+                  <Badge variant="secondary" className="bg-purple-900/30 text-purple-300 border-purple-600 text-xs">MLOps</Badge>
                 </div>
               </div>
               
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 hover:border-cyan-400/50 transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-4 text-cyan-400">Achievements</h3>
-                <ul className="space-y-3 text-slate-300">
+                <h3 className="text-lg font-bold mb-4 text-cyan-400">Achievements</h3>
+                <ul className="space-y-3 text-slate-300 text-sm">
                   <li className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
                     <span>Built 50+ AI/ML projects</span>
@@ -215,11 +229,11 @@ const Index = () => {
             <div className="relative animate-fade-in">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 rounded-2xl blur-xl"></div>
               <div className="relative bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700">
-                <h3 className="text-2xl font-bold mb-6 text-center text-cyan-400">Core Expertise</h3>
+                <h3 className="text-lg font-bold mb-6 text-center text-cyan-400">Core Expertise</h3>
                 <div className="grid grid-cols-2 gap-4">
                   {['Machine Learning', 'Deep Learning', 'Computer Vision', 'NLP', 'Data Science', 'MLOps'].map((skill) => (
                     <div key={skill} className="text-center p-4 bg-slate-700/50 rounded-lg hover:bg-slate-700 transition-colors duration-300">
-                      <div className="text-cyan-400 font-semibold">{skill}</div>
+                      <div className="text-cyan-400 font-semibold text-sm">{skill}</div>
                     </div>
                   ))}
                 </div>
@@ -233,10 +247,10 @@ const Index = () => {
       <section id="skills" className="relative z-10 py-20 px-6">
         <div className="container mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
               Technical Skills
             </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            <p className="text-base text-slate-300 max-w-3xl mx-auto">
               Comprehensive expertise across the AI/ML technology stack
             </p>
           </div>
@@ -249,8 +263,8 @@ const Index = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex justify-between items-center mb-2">
-                  <h3 className="text-white font-semibold">{skill.name}</h3>
-                  <span className="text-cyan-400 text-sm">{skill.level}%</span>
+                  <h3 className="text-white font-semibold text-sm">{skill.name}</h3>
+                  <span className="text-cyan-400 text-xs">{skill.level}%</span>
                 </div>
                 <div className="w-full bg-slate-700 rounded-full h-2 mb-2">
                   <div 
@@ -269,10 +283,10 @@ const Index = () => {
       <section id="projects" className="relative z-10 py-20 px-6">
         <div className="container mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
               PORTFOLIO
             </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
+            <p className="text-base text-slate-300 max-w-3xl mx-auto mb-8">
               A glimpse of the projects I've been working on
             </p>
           </div>
@@ -283,7 +297,7 @@ const Index = () => {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`px-4 py-2 rounded-full text-xs font-medium transition-all duration-300 ${
                   selectedCategory === category
                     ? 'bg-cyan-500 text-white shadow-lg'
                     : 'bg-slate-800/50 text-slate-300 hover:bg-slate-700 border border-slate-600'
@@ -309,10 +323,10 @@ const Index = () => {
       <section id="services" className="relative z-10 py-20 px-6">
         <div className="container mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
               Technical Capabilities
             </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            <p className="text-base text-slate-300 max-w-3xl mx-auto">
               Comprehensive AI/ML expertise across the entire development lifecycle
             </p>
           </div>
@@ -331,10 +345,10 @@ const Index = () => {
       <section id="contact" className="relative z-10 py-20 px-6">
         <div className="container mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
               Get In Touch
             </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            <p className="text-base text-slate-300 max-w-3xl mx-auto">
               Ready to collaborate on your next AI/ML project? Let's connect!
             </p>
           </div>
@@ -344,22 +358,22 @@ const Index = () => {
               <div className="flex items-center space-x-4 p-4 bg-slate-800/50 rounded-lg hover:bg-slate-800 transition-colors duration-300">
                 <Mail className="w-6 h-6 text-cyan-400" />
                 <div>
-                  <div className="font-semibold">Email</div>
-                  <div className="text-slate-300">ritesh@example.com</div>
+                  <div className="font-semibold text-sm">Email</div>
+                  <div className="text-slate-300 text-xs">ritesh@example.com</div>
                 </div>
               </div>
               <div className="flex items-center space-x-4 p-4 bg-slate-800/50 rounded-lg hover:bg-slate-800 transition-colors duration-300">
                 <Phone className="w-6 h-6 text-cyan-400" />
                 <div>
-                  <div className="font-semibold">Phone</div>
-                  <div className="text-slate-300">+91 98765 43210</div>
+                  <div className="font-semibold text-sm">Phone</div>
+                  <div className="text-slate-300 text-xs">+91 98765 43210</div>
                 </div>
               </div>
               <div className="flex items-center space-x-4 p-4 bg-slate-800/50 rounded-lg hover:bg-slate-800 transition-colors duration-300">
                 <Linkedin className="w-6 h-6 text-cyan-400" />
                 <div>
-                  <div className="font-semibold">LinkedIn</div>
-                  <div className="text-slate-300">linkedin.com/in/ritesh</div>
+                  <div className="font-semibold text-sm">LinkedIn</div>
+                  <div className="text-slate-300 text-xs">linkedin.com/in/ritesh</div>
                 </div>
               </div>
             </div>
@@ -368,14 +382,14 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 rounded-2xl blur-xl"></div>
               <Card className="relative bg-slate-800/50 backdrop-blur-sm border-slate-700">
                 <CardHeader>
-                  <CardTitle className="text-cyan-400">Let's Collaborate</CardTitle>
-                  <CardDescription className="text-slate-300">
+                  <CardTitle className="text-cyan-400 text-lg">Let's Collaborate</CardTitle>
+                  <CardDescription className="text-slate-300 text-sm">
                     Whether you have a specific project in mind or want to explore AI/ML possibilities, 
                     I'm always excited to discuss innovative solutions.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                  <Button className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white text-sm">
                     Start a Conversation
                   </Button>
                 </CardContent>
@@ -389,7 +403,7 @@ const Index = () => {
       <footer className="relative z-10 py-12 px-6 border-t border-slate-800">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4 md:mb-0">
+            <div className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4 md:mb-0">
               Ritesh
             </div>
             <div className="flex space-x-6">
@@ -407,7 +421,7 @@ const Index = () => {
                 </a>
               ))}
             </div>
-            <div className="text-slate-400 mt-4 md:mt-0">
+            <div className="text-slate-400 mt-4 md:mt-0 text-xs">
               © 2024 Ritesh. All rights reserved.
             </div>
           </div>
