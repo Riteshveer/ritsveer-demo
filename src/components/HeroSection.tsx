@@ -60,16 +60,16 @@ const HeroSection = () => {
           {/* Main content */}
           <div className="animate-fade-in">
             <div className="mb-6">
-              <span className="inline-block px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full border border-cyan-500/30 text-cyan-300 text-sm font-medium">
+              <span className="inline-block px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full border border-cyan-500/30 text-cyan-300 text-xs font-medium">
                 👋 Welcome to my portfolio
               </span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent leading-tight">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent leading-tight">
               Hi, I'm <span className="text-cyan-400">Ritesh</span>
             </h1>
             
-            <div className="text-2xl md:text-3xl lg:text-4xl mb-8 text-slate-300 h-16 flex items-center justify-center">
+            <div className="text-lg md:text-xl lg:text-2xl mb-8 text-slate-300 h-12 flex items-center justify-center">
               <span className="mr-3">I'm a</span>
               <span className="text-cyan-400 font-semibold min-w-fit">
                 {displayText}
@@ -77,7 +77,7 @@ const HeroSection = () => {
               </span>
             </div>
             
-            <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto mb-12 leading-relaxed">
+            <p className="text-base md:text-lg text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed">
               Specializing in building <span className="text-cyan-400 font-semibold">intelligent systems</span> with 
               <span className="text-blue-400 font-semibold"> AI, ML, and data science</span>. 
               Transforming complex problems into elegant solutions.
@@ -119,7 +119,7 @@ const HeroSection = () => {
                   className="px-6 py-3 bg-slate-800/50 backdrop-blur-sm rounded-full border border-slate-700 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 animate-fade-in"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
-                  <span className="text-cyan-300 font-medium">{skill}</span>
+                  <span className="text-cyan-300 font-medium text-sm">{skill}</span>
                 </div>
               ))}
             </div>
@@ -128,14 +128,14 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 hover:scale-105"
+                className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-4 text-base font-semibold rounded-full shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 hover:scale-105"
               >
                 View My Projects
               </Button>
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-cyan-400/50 text-cyan-400 hover:bg-cyan-400/10 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
+                className="border-cyan-400/50 text-cyan-400 hover:bg-cyan-400/10 px-8 py-4 text-base font-semibold rounded-full transition-all duration-300 hover:scale-105"
               >
                 Download Resume
               </Button>

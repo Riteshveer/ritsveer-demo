@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, Eye } from 'lucide-react';
+import { Github, Eye } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -82,14 +82,6 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               <Github className="w-3 h-3 mr-1" />
               Code
             </Button>
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="flex-1 border-slate-600 text-slate-300 hover:bg-slate-700 text-xs"
-            >
-              <ExternalLink className="w-3 h-3 mr-1" />
-              Demo
-            </Button>
           </div>
         </CardContent>
       </Card>
@@ -126,10 +118,6 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               <Button className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600">
                 <Github className="w-4 h-4 mr-2" />
                 View Source Code
-              </Button>
-              <Button variant="outline" className="flex-1 border-cyan-400/50 text-cyan-400 hover:bg-cyan-400/10">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Live Demo
               </Button>
             </div>
           </div>

@@ -111,6 +111,21 @@ const Index = () => {
     }
   ];
 
+  const skills = [
+    { name: "Python", level: 95, category: "Programming" },
+    { name: "TensorFlow", level: 90, category: "Deep Learning" },
+    { name: "PyTorch", level: 88, category: "Deep Learning" },
+    { name: "Scikit-learn", level: 92, category: "Machine Learning" },
+    { name: "Pandas", level: 94, category: "Data Science" },
+    { name: "NumPy", level: 93, category: "Data Science" },
+    { name: "SQL", level: 85, category: "Database" },
+    { name: "Docker", level: 80, category: "DevOps" },
+    { name: "Git", level: 90, category: "Tools" },
+    { name: "Jupyter", level: 95, category: "Tools" },
+    { name: "React", level: 82, category: "Frontend" },
+    { name: "FastAPI", level: 85, category: "Backend" }
+  ];
+
   const links = [
     { name: "GitHub", icon: Github, url: "https://github.com/ritesh", description: "Open source projects and code repositories" },
     { name: "LinkedIn", icon: Linkedin, url: "https://linkedin.com/in/ritesh", description: "Professional network and achievements" },
@@ -134,7 +149,7 @@ const Index = () => {
               Ritesh
             </div>
             <div className="hidden md:flex space-x-8">
-              {['Home', 'Experience', 'Projects', 'Services', 'Contact'].map((item) => (
+              {['Home', 'Experience', 'Skills', 'Projects', 'Services', 'Contact'].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
@@ -214,6 +229,42 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Skills Section */}
+      <section id="skills" className="relative z-10 py-20 px-6">
+        <div className="container mx-auto">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              Technical Skills
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Comprehensive expertise across the AI/ML technology stack
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {skills.map((skill, index) => (
+              <div 
+                key={skill.name}
+                className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="flex justify-between items-center mb-2">
+                  <h3 className="text-white font-semibold">{skill.name}</h3>
+                  <span className="text-cyan-400 text-sm">{skill.level}%</span>
+                </div>
+                <div className="w-full bg-slate-700 rounded-full h-2 mb-2">
+                  <div 
+                    className="bg-gradient-to-r from-cyan-500 to-blue-500 h-2 rounded-full transition-all duration-1000"
+                    style={{ width: `${skill.level}%` }}
+                  ></div>
+                </div>
+                <span className="text-slate-400 text-xs">{skill.category}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Portfolio Section */}
       <section id="projects" className="relative z-10 py-20 px-6">
         <div className="container mx-auto">
@@ -271,43 +322,6 @@ const Index = () => {
               <div key={service.title} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 <ServiceCard service={service} />
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Websites & Resources */}
-      <section className="relative z-10 py-20 px-6">
-        <div className="container mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-              Resources & Links
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Connect with me and explore my work across different platforms
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {links.map((link, index) => (
-              <Card key={link.name} className="bg-slate-800/50 backdrop-blur-sm border-slate-700 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <CardHeader className="text-center">
-                  <link.icon className="w-12 h-12 mx-auto text-cyan-400 mb-4" />
-                  <CardTitle className="text-white">{link.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-slate-300 text-center mb-4">
-                    {link.description}
-                  </CardDescription>
-                  <Button 
-                    variant="outline" 
-                    className="w-full border-cyan-400/50 text-cyan-400 hover:bg-cyan-400/10"
-                    onClick={() => window.open(link.url, '_blank')}
-                  >
-                    Visit {link.name}
-                  </Button>
-                </CardContent>
-              </Card>
             ))}
           </div>
         </div>
