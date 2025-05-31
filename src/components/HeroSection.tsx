@@ -48,38 +48,38 @@ const HeroSection = () => {
         <div className="relative">
           {/* Floating icons */}
           <div className="absolute -top-20 -left-20 animate-pulse">
-            <Sparkles className="w-8 h-8 text-cyan-400 opacity-60" />
+            <Sparkles className="w-8 h-8 text-gray-700 opacity-60" />
           </div>
           <div className="absolute -top-16 -right-16 animate-pulse" style={{ animationDelay: '1s' }}>
-            <Cpu className="w-10 h-10 text-blue-400 opacity-60" />
+            <Cpu className="w-10 h-10 text-gray-600 opacity-60" />
           </div>
           <div className="absolute -bottom-10 left-10 animate-pulse" style={{ animationDelay: '2s' }}>
-            <Database className="w-6 h-6 text-purple-400 opacity-60" />
+            <Database className="w-6 h-6 text-gray-500 opacity-60" />
           </div>
 
           {/* Main content */}
           <div className="animate-fade-in">
             <div className="mb-6">
-              <span className="inline-block px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full border border-cyan-500/30 text-cyan-300 text-xs font-medium">
+              <span className="inline-block px-4 py-2 bg-gradient-to-r from-gray-200/20 to-gray-300/20 rounded-full border border-gray-300/30 text-gray-700 text-xs font-medium">
                 👋 Welcome to my portfolio
               </span>
             </div>
             
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent leading-tight">
-              Hi, I'm <span className="text-cyan-400">Ritesh</span>
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 bg-clip-text text-transparent leading-tight">
+              Hi, I'm <span className="text-gray-700">Ritesh</span>
             </h1>
             
-            <div className="text-lg md:text-xl lg:text-2xl mb-8 text-slate-300 h-12 flex items-center justify-center">
+            <div className="text-lg md:text-xl lg:text-xl mb-8 text-gray-600 h-12 flex items-center justify-center">
               <span className="mr-3">I'm a</span>
-              <span className="text-cyan-400 font-semibold min-w-fit">
+              <span className="text-gray-700 font-semibold min-w-fit">
                 {displayText}
                 <span className="animate-pulse">|</span>
               </span>
             </div>
             
-            <p className="text-base md:text-lg text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed">
-              Specializing in building <span className="text-cyan-400 font-semibold">intelligent systems</span> with 
-              <span className="text-blue-400 font-semibold"> AI, ML, and data science</span>. 
+            <p className="text-sm md:text-base text-gray-500 max-w-3xl mx-auto mb-12 leading-relaxed">
+              Specializing in building <span className="text-gray-700 font-semibold">intelligent systems</span> with 
+              <span className="text-gray-600 font-semibold"> AI, ML, and data science</span>. 
               Transforming complex problems into elegant solutions.
             </p>
 
@@ -89,7 +89,7 @@ const HeroSection = () => {
                 href="https://github.com/ritesh"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-slate-800/50 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700/50 transition-all duration-300 hover:scale-110 border border-slate-700 hover:border-cyan-400/50"
+                className="w-12 h-12 bg-gray-100/50 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-500 hover:text-gray-700 hover:bg-gray-200/50 transition-all duration-300 hover:scale-110 border border-gray-200 hover:border-gray-400/50"
               >
                 <Github className="w-6 h-6" />
               </a>
@@ -97,7 +97,7 @@ const HeroSection = () => {
                 href="https://linkedin.com/in/ritesh"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-slate-800/50 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700/50 transition-all duration-300 hover:scale-110 border border-slate-700 hover:border-cyan-400/50"
+                className="w-12 h-12 bg-gray-100/50 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-500 hover:text-gray-700 hover:bg-gray-200/50 transition-all duration-300 hover:scale-110 border border-gray-200 hover:border-gray-400/50"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
@@ -105,7 +105,7 @@ const HeroSection = () => {
                 href="https://kaggle.com/ritesh"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-slate-800/50 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:bg-slate-700/50 transition-all duration-300 hover:scale-110 border border-slate-700 hover:border-cyan-400/50"
+                className="w-12 h-12 bg-gray-100/50 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-500 hover:text-gray-700 hover:bg-gray-200/50 transition-all duration-300 hover:scale-110 border border-gray-200 hover:border-gray-400/50"
               >
                 <Award className="w-6 h-6" />
               </a>
@@ -116,10 +116,10 @@ const HeroSection = () => {
               {['Deep Learning', 'Generative AI', 'End-to-End ML Systems'].map((skill, index) => (
                 <div 
                   key={skill}
-                  className="px-6 py-3 bg-slate-800/50 backdrop-blur-sm rounded-full border border-slate-700 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 animate-fade-in"
+                  className="px-6 py-3 bg-gray-100/50 backdrop-blur-sm rounded-full border border-gray-200 hover:border-gray-400/50 transition-all duration-300 hover:scale-105 animate-fade-in"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
-                  <span className="text-cyan-300 font-medium text-sm">{skill}</span>
+                  <span className="text-gray-700 font-medium text-sm">{skill}</span>
                 </div>
               ))}
             </div>
@@ -128,14 +128,14 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-4 text-base font-semibold rounded-full shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 hover:scale-105"
+                className="bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-800 hover:to-gray-950 text-white px-8 py-4 text-sm font-semibold rounded-full shadow-lg hover:shadow-gray-500/25 transition-all duration-300 hover:scale-105"
               >
                 View My Projects
               </Button>
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-cyan-400/50 text-cyan-400 hover:bg-cyan-400/10 px-8 py-4 text-base font-semibold rounded-full transition-all duration-300 hover:scale-105"
+                className="border-gray-400/50 text-gray-700 hover:bg-gray-100/10 px-8 py-4 text-sm font-semibold rounded-full transition-all duration-300 hover:scale-105"
               >
                 Download Resume
               </Button>
@@ -143,7 +143,7 @@ const HeroSection = () => {
 
             {/* Scroll indicator */}
             <div className="animate-bounce cursor-pointer" onClick={scrollToNext}>
-              <ChevronDown className="w-8 h-8 text-slate-400 mx-auto hover:text-cyan-400 transition-colors duration-300" />
+              <ChevronDown className="w-8 h-8 text-gray-500 mx-auto hover:text-gray-700 transition-colors duration-300" />
             </div>
           </div>
         </div>
