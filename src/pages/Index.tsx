@@ -10,6 +10,8 @@ import ProjectsSection from '@/components/ProjectsSection';
 import ServicesSection from '@/components/ServicesSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import StatisticsSection from '@/components/StatisticsSection';
+import NeuralNetworkBackground from '@/components/NeuralNetworkBackground';
 
 const Index = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -29,6 +31,9 @@ const Index = () => {
 
   return (
     <div className="relative min-h-screen bg-white text-gray-900 overflow-hidden">
+      {/* Neural Network Background */}
+      <NeuralNetworkBackground />
+
       {/* Navigation */}
       <Navigation />
 
@@ -38,19 +43,32 @@ const Index = () => {
       </section>
 
       {/* Experience & Credentials */}
-      <ExperienceSection />
+      <section id="experience" className="relative z-10">
+        <ExperienceSection />
+        <div className="mb-8">
+          <StatisticsSection />
+        </div>
+      </section>
 
       {/* Skills Section */}
-      <SkillsSection />
+      <section id="skills" className="relative z-10">
+        <SkillsSection />
+      </section>
 
       {/* Portfolio Section */}
-      <ProjectsSection />
+      <section id="projects" className="relative z-10">
+        <ProjectsSection />
+      </section>
 
       {/* Services Section */}
-      <ServicesSection />
+      <section id="services" className="relative z-10">
+        <ServicesSection />
+      </section>
 
       {/* Contact Section */}
-      <ContactSection />
+      <section id="contact" className="relative z-10">
+        <ContactSection />
+      </section>
 
       {/* Footer */}
       <Footer />
