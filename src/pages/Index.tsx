@@ -10,7 +10,6 @@ import ProjectsSection from '@/components/ProjectsSection';
 import ServicesSection from '@/components/ServicesSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
-import StatisticsSection from '@/components/StatisticsSection';
 import NeuralNetworkBackground from '@/components/NeuralNetworkBackground';
 
 const Index = () => {
@@ -45,9 +44,6 @@ const Index = () => {
       {/* Experience & Credentials */}
       <section id="experience" className="relative z-10">
         <ExperienceSection />
-        <div className="mb-8">
-          <StatisticsSection />
-        </div>
       </section>
 
       {/* Skills Section */}

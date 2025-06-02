@@ -1,6 +1,5 @@
 
 import { Badge } from '@/components/ui/badge';
-import StatisticsSection from './StatisticsSection';
 
 const ExperienceSection = () => {
   return (
@@ -10,9 +9,6 @@ const ExperienceSection = () => {
           <h2 className="text-xl md:text-2xl font-bold mb-4 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
             Experience & Credentials
           </h2>
-          
-          {/* Statistics Section */}
-          <StatisticsSection />
         </div>
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
