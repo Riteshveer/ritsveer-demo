@@ -77,7 +77,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             <Button 
               variant="outline" 
               size="sm" 
-              className="flex-1 border-slate-600 text-slate-300 hover:bg-slate-700 text-xs"
+              className="flex-1 border-slate-600 text-black hover:bg-slate-700 hover:text-black text-xs"
             >
               <Github className="w-3 h-3 mr-1" />
               Code
