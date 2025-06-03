@@ -55,17 +55,17 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section id="experience" className="relative z-10 py-16 px-6 mb-16">
+    <section id="experience" className="relative z-10 py-12 px-6 mb-12">
       <div className="container mx-auto max-w-4xl">
-        <div className="text-center mb-12 animate-fade-in">
+        <div className="text-center mb-10 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
-            Experience
+            Experience & Credentials
           </h2>
-          <p className="text-gray-600 mb-8">My journey in the academic & professional front</p>
+          <p className="text-gray-600 mb-6">My journey in the academic & professional front</p>
           
           {/* Statistics Section with 2cm gap */}
           <div className="mt-8" style={{ marginTop: '2cm' }}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center animate-fade-in">
                 <div className="text-xl md:text-2xl font-bold text-gray-700 mb-2">10+</div>
                 <div className="text-gray-500 text-xs uppercase tracking-wider">PROJECTS</div>
@@ -86,11 +86,11 @@ const ExperienceSection = () => {
           </div>
 
           {/* Tab Navigation */}
-          <div className="flex justify-center mt-12 mb-8">
+          <div className="flex justify-center mt-10 mb-6">
             <div className="flex bg-gray-100 rounded-lg p-1">
               <button
                 onClick={() => setActiveTab('academic')}
-                className={`flex items-center px-6 py-3 rounded-md transition-all duration-300 ${
+                className={`flex items-center px-4 py-2 rounded-md transition-all duration-300 ${
                   activeTab === 'academic'
                     ? 'bg-white text-gray-700 shadow-sm'
                     : 'text-gray-500 hover:text-gray-700'
@@ -101,7 +101,7 @@ const ExperienceSection = () => {
               </button>
               <button
                 onClick={() => setActiveTab('professional')}
-                className={`flex items-center px-6 py-3 rounded-md transition-all duration-300 ${
+                className={`flex items-center px-4 py-2 rounded-md transition-all duration-300 ${
                   activeTab === 'professional'
                     ? 'bg-white text-purple-600 shadow-sm'
                     : 'text-gray-500 hover:text-gray-700'
@@ -120,25 +120,25 @@ const ExperienceSection = () => {
           <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-gray-300 h-full"></div>
 
           {/* Experience Items */}
-          <div className="space-y-12">
+          <div className="space-y-8">
             {(activeTab === 'academic' ? academicExperience : professionalExperience).map((item, index) => (
               <div key={index} className={`flex items-center animate-fade-in ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`} style={{ animationDelay: `${index * 0.1}s` }}>
                 {/* Content */}
-                <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
-                  <div className="bg-white rounded-lg p-6 shadow-lg border border-gray-200 hover:border-gray-300 transition-all duration-300">
-                    <h3 className="text-lg font-bold text-gray-800 mb-2">{item.title}</h3>
-                    <p className="text-purple-600 font-semibold mb-2">{item.organization}</p>
-                    <div className="flex items-center text-gray-500 text-sm mb-3">
-                      <Calendar className="w-4 h-4 mr-1" />
+                <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-6' : 'text-left pl-6'}`}>
+                  <div className="bg-white rounded-lg p-4 shadow-md border border-gray-200 hover:border-gray-300 transition-all duration-300">
+                    <h3 className="text-base font-bold text-gray-800 mb-1">{item.title}</h3>
+                    <p className="text-purple-600 font-semibold mb-2 text-sm">{item.organization}</p>
+                    <div className="flex items-center text-gray-500 text-xs mb-2">
+                      <Calendar className="w-3 h-3 mr-1" />
                       {item.period}
                     </div>
-                    <p className="text-gray-600 text-sm">{item.description}</p>
+                    <p className="text-gray-600 text-xs leading-relaxed">{item.description}</p>
                   </div>
                 </div>
 
                 {/* Timeline Dot */}
                 <div className="w-2/12 flex justify-center">
-                  <div className={`w-4 h-4 rounded-full border-4 ${activeTab === 'academic' ? 'bg-gray-700 border-gray-300' : 'bg-purple-600 border-purple-200'}`}></div>
+                  <div className={`w-3 h-3 rounded-full border-4 ${activeTab === 'academic' ? 'bg-gray-700 border-gray-300' : 'bg-purple-600 border-purple-200'}`}></div>
                 </div>
 
                 {/* Empty Space */}
@@ -149,11 +149,11 @@ const ExperienceSection = () => {
         </div>
 
         {/* Skills Section */}
-        <div className="mt-16 text-center">
-          <h3 className="text-xl font-bold mb-6 text-gray-700">Core Expertise</h3>
-          <div className="flex flex-wrap justify-center gap-3">
+        <div className="mt-12 text-center">
+          <h3 className="text-lg font-bold mb-4 text-gray-700">Core Expertise</h3>
+          <div className="flex flex-wrap justify-center gap-2">
             {['Machine Learning', 'Deep Learning', 'Computer Vision', 'NLP', 'Data Science', 'MLOps', 'Python', 'TensorFlow', 'PyTorch'].map((skill) => (
-              <Badge key={skill} variant="secondary" className="bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200 transition-colors duration-300">
+              <Badge key={skill} variant="secondary" className="bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200 transition-colors duration-300 text-xs">
                 {skill}
               </Badge>
             ))}
