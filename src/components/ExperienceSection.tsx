@@ -1,14 +1,67 @@
 
 import { Badge } from '@/components/ui/badge';
+import { useState } from 'react';
+import { GraduationCap, Briefcase, Calendar } from 'lucide-react';
 
 const ExperienceSection = () => {
+  const [activeTab, setActiveTab] = useState('academic');
+
+  const academicExperience = [
+    {
+      title: "B-Tech in AI/ML",
+      organization: "PCET's Pimpri Chinchwad University",
+      period: "2023 - 2027",
+      description: "Pursuing Bachelor's in Artificial Intelligence & Machine Learning, focusing on cutting-edge technologies and practical applications."
+    },
+    {
+      title: "Deep Learning Specialization",
+      organization: "Coursera - DeepLearning.AI",
+      period: "2023 - Present",
+      description: "Advanced coursework in neural networks, deep learning, and AI applications."
+    }
+  ];
+
+  const professionalExperience = [
+    {
+      title: "Lead MLE & Data Scientist",
+      organization: "BrainSightAI",
+      period: "Jul 2023 - Present",
+      description: "Leading machine learning engineering and data science initiatives, developing AI solutions for real-world problems."
+    },
+    {
+      title: "Senior MLE & Data Scientist",
+      organization: "BrainSightAI", 
+      period: "May 2022 - Jul 2023",
+      description: "Developed and deployed machine learning models, worked on data analytics and AI research projects."
+    },
+    {
+      title: "Machine Learning Engineer",
+      organization: "BrainSightAI",
+      period: "Aug 2021 - May 2022",
+      description: "Implemented ML algorithms, data preprocessing, and model optimization for various AI applications."
+    },
+    {
+      title: "Programmer Analyst Trainee",
+      organization: "Cognizant",
+      period: "Jan 2021 - Jul 2021",
+      description: "Training program focused on software development, data analysis, and emerging technologies."
+    },
+    {
+      title: "AI Engineer Intern",
+      organization: "DCKAP",
+      period: "Sep 2020 - Jan 2021",
+      description: "Worked on artificial intelligence projects, gained hands-on experience with ML frameworks."
+    }
+  ];
+
   return (
     <section id="experience" className="relative z-10 py-16 px-6 mb-16">
-      <div className="container mx-auto">
+      <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-xl md:text-2xl font-bold mb-4 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
-            Experience & Credentials
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
+            Experience
           </h2>
+          <p className="text-gray-600 mb-8">My journey in the academic & professional front</p>
           
           {/* Statistics Section with 2cm gap */}
           <div className="mt-8" style={{ marginTop: '2cm' }}>
@@ -31,54 +84,79 @@ const ExperienceSection = () => {
               </div>
             </div>
           </div>
-        </div>
-        
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 animate-fade-in">
-            <div className="bg-gray-50/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 hover:border-gray-400/50 transition-all duration-300">
-              <h3 className="text-base font-bold mb-4 text-gray-700">Academic Journey</h3>
-              <p className="text-gray-600 mb-4 text-sm">
-                Pursuing B-Tech in AI/ML (2023–2027) at PCET's Pimpri Chinchwad University, 
-                focusing on cutting-edge technologies and practical applications.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="secondary" className="bg-gray-200/30 text-gray-700 border-gray-400 text-xs">Deep Learning</Badge>
-                <Badge variant="secondary" className="bg-gray-200/30 text-gray-700 border-gray-400 text-xs">Generative AI</Badge>
-                <Badge variant="secondary" className="bg-gray-200/30 text-gray-700 border-gray-400 text-xs">MLOps</Badge>
-              </div>
-            </div>
-            
-            <div className="bg-gray-50/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 hover:border-gray-400/50 transition-all duration-300">
-              <h3 className="text-base font-bold mb-4 text-gray-700">Achievements</h3>
-              <ul className="space-y-3 text-gray-600 text-sm">
-                <li className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-gray-700 rounded-full"></div>
-                  <span>Built 50+ AI/ML projects</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-gray-700 rounded-full"></div>
-                  <span>Top performer in AI/ML hackathons</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-gray-700 rounded-full"></div>
-                  <span>Research focus on intelligent systems</span>
-                </li>
-              </ul>
+
+          {/* Tab Navigation */}
+          <div className="flex justify-center mt-12 mb-8">
+            <div className="flex bg-gray-100 rounded-lg p-1">
+              <button
+                onClick={() => setActiveTab('academic')}
+                className={`flex items-center px-6 py-3 rounded-md transition-all duration-300 ${
+                  activeTab === 'academic'
+                    ? 'bg-white text-gray-700 shadow-sm'
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+              >
+                <GraduationCap className="w-4 h-4 mr-2" />
+                Academic
+              </button>
+              <button
+                onClick={() => setActiveTab('professional')}
+                className={`flex items-center px-6 py-3 rounded-md transition-all duration-300 ${
+                  activeTab === 'professional'
+                    ? 'bg-white text-purple-600 shadow-sm'
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+              >
+                <Briefcase className="w-4 h-4 mr-2" />
+                Professional
+              </button>
             </div>
           </div>
-          
-          <div className="relative animate-fade-in">
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-300/20 to-gray-500/20 rounded-2xl blur-xl"></div>
-            <div className="relative bg-gray-50/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-200">
-              <h3 className="text-base font-bold mb-6 text-center text-gray-700">Core Expertise</h3>
-              <div className="grid grid-cols-2 gap-4">
-                {['Machine Learning', 'Deep Learning', 'Computer Vision', 'NLP', 'Data Science', 'MLOps'].map((skill) => (
-                  <div key={skill} className="text-center p-4 bg-gray-100/50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
-                    <div className="text-gray-700 font-semibold text-sm">{skill}</div>
+        </div>
+
+        {/* Timeline */}
+        <div className="relative">
+          {/* Central Line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-gray-300 h-full"></div>
+
+          {/* Experience Items */}
+          <div className="space-y-12">
+            {(activeTab === 'academic' ? academicExperience : professionalExperience).map((item, index) => (
+              <div key={index} className={`flex items-center animate-fade-in ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`} style={{ animationDelay: `${index * 0.1}s` }}>
+                {/* Content */}
+                <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
+                  <div className="bg-white rounded-lg p-6 shadow-lg border border-gray-200 hover:border-gray-300 transition-all duration-300">
+                    <h3 className="text-lg font-bold text-gray-800 mb-2">{item.title}</h3>
+                    <p className="text-purple-600 font-semibold mb-2">{item.organization}</p>
+                    <div className="flex items-center text-gray-500 text-sm mb-3">
+                      <Calendar className="w-4 h-4 mr-1" />
+                      {item.period}
+                    </div>
+                    <p className="text-gray-600 text-sm">{item.description}</p>
                   </div>
-                ))}
+                </div>
+
+                {/* Timeline Dot */}
+                <div className="w-2/12 flex justify-center">
+                  <div className={`w-4 h-4 rounded-full border-4 ${activeTab === 'academic' ? 'bg-gray-700 border-gray-300' : 'bg-purple-600 border-purple-200'}`}></div>
+                </div>
+
+                {/* Empty Space */}
+                <div className="w-5/12"></div>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Skills Section */}
+        <div className="mt-16 text-center">
+          <h3 className="text-xl font-bold mb-6 text-gray-700">Core Expertise</h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            {['Machine Learning', 'Deep Learning', 'Computer Vision', 'NLP', 'Data Science', 'MLOps', 'Python', 'TensorFlow', 'PyTorch'].map((skill) => (
+              <Badge key={skill} variant="secondary" className="bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200 transition-colors duration-300">
+                {skill}
+              </Badge>
+            ))}
           </div>
         </div>
       </div>
