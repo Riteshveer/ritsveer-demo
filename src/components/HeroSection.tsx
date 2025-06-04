@@ -9,10 +9,9 @@ const HeroSection = () => {
   const [isDeleting, setIsDeleting] = useState(false);
 
   const phrases = [
-    "Deep Learning Engineer",
-    "AI/ML Specialist", 
-    "Data Science Expert",
-    "Generative AI Developer"
+    "Machine Learning Engineer",
+    "Data Scientist", 
+    "Data Analyst"
   ];
 
   useEffect(() => {
@@ -59,12 +58,6 @@ const HeroSection = () => {
 
           {/* Main content */}
           <div className="animate-scale-in">
-            <div className="mb-6">
-              <span className="inline-block px-4 py-2 bg-gradient-to-r from-gray-200/20 to-gray-300/20 rounded-full border border-gray-300/30 text-gray-700 text-xs font-medium">
-                👋 Welcome to my portfolio
-              </span>
-            </div>
-            
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 bg-clip-text text-transparent leading-tight">
               Hi, I'm <span className="text-gray-700">Ritesh</span>
             </h1>
@@ -86,7 +79,7 @@ const HeroSection = () => {
             {/* Social media icons */}
             <div className="flex justify-center space-x-6 mb-8">
               <a
-                href="https://github.com/ritesh"
+                href="https://github.com/Riteshveer"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-gray-100/50 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-500 hover:text-gray-700 hover:bg-gray-200/50 transition-all duration-300 hover:scale-110 border border-gray-200 hover:border-gray-400/50"
@@ -94,7 +87,7 @@ const HeroSection = () => {
                 <Github className="w-6 h-6" />
               </a>
               <a
-                href="https://linkedin.com/in/ritesh"
+                href="https://www.linkedin.com/in/ritesh-veer-39a30328b"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-gray-100/50 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-500 hover:text-gray-700 hover:bg-gray-200/50 transition-all duration-300 hover:scale-110 border border-gray-200 hover:border-gray-400/50"
@@ -102,7 +95,7 @@ const HeroSection = () => {
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
-                href="https://kaggle.com/ritesh"
+                href="https://docs.google.com/document/d/1xIiTj--ZNi0oyUn7_6dzGHlCEnwt19KKIfubHoRRJmo/edit?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-gray-100/50 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-500 hover:text-gray-700 hover:bg-gray-200/50 transition-all duration-300 hover:scale-110 border border-gray-200 hover:border-gray-400/50"
