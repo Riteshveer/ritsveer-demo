@@ -23,18 +23,24 @@ const SkillsSection = () => {
   }, []);
 
   const skills = [
-    { name: "Python", level: 95, category: "Programming" },
-    { name: "TensorFlow", level: 90, category: "Deep Learning" },
-    { name: "PyTorch", level: 88, category: "Deep Learning" },
-    { name: "Scikit-learn", level: 92, category: "Machine Learning" },
-    { name: "Pandas", level: 94, category: "Data Science" },
-    { name: "NumPy", level: 93, category: "Data Science" },
-    { name: "SQL", level: 85, category: "Database" },
-    { name: "Docker", level: 80, category: "DevOps" },
-    { name: "Git", level: 90, category: "Tools" },
-    { name: "Jupyter", level: 95, category: "Tools" },
-    { name: "React", level: 82, category: "Frontend" },
-    { name: "FastAPI", level: 85, category: "Backend" }
+    { name: "Python", level: 95, category: "Programming Languages" },
+    { name: "Java (Core)", level: 60, category: "Programming Languages" },
+    { name: "C", level: 75, category: "Programming Languages" },
+    { name: "SQL", level: 90, category: "Programming Languages" },
+    { name: "NumPy", level: 85, category: "Libraries & Frameworks" },
+    { name: "Pandas", level: 88, category: "Libraries & Frameworks" },
+    { name: "Matplotlib", level: 80, category: "Libraries & Frameworks" },
+    { name: "Seaborn", level: 80, category: "Libraries & Frameworks" },
+    { name: "TensorFlow", level: 82, category: "Libraries & Frameworks" },
+    { name: "Tableau", level: 85, category: "Tools & Platforms" },
+    { name: "GitHub", level: 90, category: "Tools & Platforms" },
+    { name: "VS Code", level: 95, category: "Tools & Platforms" },
+    { name: "Anaconda", level: 85, category: "Tools & Platforms" },
+    { name: "IntelliJ IDEA", level: 75, category: "Tools & Platforms" },
+    { name: "Machine Learning", level: 85, category: "Other Skills" },
+    { name: "Statistics", level: 80, category: "Other Skills" },
+    { name: "IoT", level: 70, category: "Other Skills" },
+    { name: "Operating Systems", level: 75, category: "Other Skills" }
   ];
 
   return (
@@ -45,7 +51,7 @@ const SkillsSection = () => {
             Technical Skills
           </h2>
           <p className="text-sm text-gray-600 max-w-3xl mx-auto">
-            Comprehensive expertise across the AI/ML technology stack
+            Comprehensive expertise across programming languages, frameworks, and development tools
           </p>
         </div>
         
