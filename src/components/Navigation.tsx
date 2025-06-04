@@ -1,14 +1,19 @@
 
+import { Bot } from 'lucide-react';
+
 const Navigation = () => {
   return (
     <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <div className="text-lg font-bold bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
-            Ritesh
+          <div className="flex items-center space-x-2">
+            <Bot className="w-6 h-6 text-gray-700" />
+            <div className="text-lg font-bold bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
+              Ritesh
+            </div>
           </div>
           <div className="hidden md:flex space-x-8">
-            {['Home', 'Experience', 'Skills', 'Projects', 'Services', 'Contact'].map((item) => (
+            {['Home', 'About', 'Experience', 'Skills', 'Research', 'Projects', 'Contact'].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
