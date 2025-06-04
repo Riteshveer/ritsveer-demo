@@ -1,9 +1,27 @@
-
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import ProjectCard from '@/components/ProjectCard';
 
 const ProjectsSection = () => {
   const [selectedCategory, setSelectedCategory] = useState('Show all');
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const projects = [
     {
@@ -69,9 +87,9 @@ const ProjectsSection = () => {
     : projects.filter(project => project.category === selectedCategory);
 
   return (
-    <section id="projects" className="relative z-10 py-16 px-6">
+    <section ref={sectionRef} id="projects" className={`relative z-10 py-16 px-6 transition-all duration-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-[40px]'}`}>
       <div className="container mx-auto">
-        <div className="text-center mb-12 animate-fade-in">
+        <div className="text-center mb-12">
           <h2 className="text-xl md:text-2xl font-bold mb-4 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
             PORTFOLIO
           </h2>
@@ -81,8 +99,8 @@ const ProjectsSection = () => {
         </div>
         
         {/* Filter buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map((category) => (
+        <div className={`flex flex-wrap justify-center gap-3 mb-12 transition-all duration-700 ${isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`} style={{ animationDelay: '0.3s' }}>
+          {categories.map((category, index) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
@@ -90,7 +108,8 @@ const ProjectsSection = () => {
                 selectedCategory === category
                   ? 'bg-gray-900 text-white shadow-lg'
                   : 'bg-gray-100/50 text-gray-600 hover:bg-gray-200 border border-gray-300'
-              }`}
+              } ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}
+              style={{ animationDelay: `${0.5 + index * 0.1}s` }}
             >
               {category}
             </button>
@@ -100,7 +119,7 @@ const ProjectsSection = () => {
         {/* Projects grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project, index) => (
-            <div key={project.id} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+            <div key={project.id} className={`transition-all duration-700 ${isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`} style={{ animationDelay: `${0.8 + index * 0.1}s` }}>
               <ProjectCard project={project} />
             </div>
           ))}

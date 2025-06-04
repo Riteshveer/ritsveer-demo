@@ -1,10 +1,28 @@
-
 import { Badge } from '@/components/ui/badge';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { GraduationCap, Briefcase, Calendar } from 'lucide-react';
 
 const ExperienceSection = () => {
   const [activeTab, setActiveTab] = useState('academic');
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const academicExperience = [
     {
@@ -55,9 +73,9 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section id="experience" className="relative z-10 py-12 px-6 mb-12">
+    <section ref={sectionRef} id="experience" className={`relative z-10 py-12 px-6 mb-12 transition-all duration-1000 ${isVisible ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-50px]'}`}>
       <div className="container mx-auto max-w-4xl">
-        <div className="text-center mb-10 animate-fade-in">
+        <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
             Experience & Credentials
           </h2>
@@ -66,22 +84,17 @@ const ExperienceSection = () => {
           {/* Statistics Section with 2cm gap */}
           <div className="mt-8" style={{ marginTop: '2cm' }}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="text-center animate-fade-in">
-                <div className="text-xl md:text-2xl font-bold text-gray-700 mb-2">10+</div>
-                <div className="text-gray-500 text-xs uppercase tracking-wider">PROJECTS</div>
-              </div>
-              <div className="text-center animate-fade-in" style={{ animationDelay: '0.1s' }}>
-                <div className="text-xl md:text-2xl font-bold text-gray-700 mb-2">15+</div>
-                <div className="text-gray-500 text-xs uppercase tracking-wider">ML MODELS</div>
-              </div>
-              <div className="text-center animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                <div className="text-xl md:text-2xl font-bold text-gray-700 mb-2">5+</div>
-                <div className="text-gray-500 text-xs uppercase tracking-wider">HACKATHONS</div>
-              </div>
-              <div className="text-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
-                <div className="text-xl md:text-2xl font-bold text-gray-700 mb-2">3+</div>
-                <div className="text-gray-500 text-xs uppercase tracking-wider">TECHNOLOGIES</div>
-              </div>
+              {[
+                { value: "10+", label: "PROJECTS" },
+                { value: "15+", label: "ML MODELS" },
+                { value: "5+", label: "HACKATHONS" },
+                { value: "3+", label: "TECHNOLOGIES" }
+              ].map((stat, index) => (
+                <div key={stat.label} className={`text-center transition-all duration-500 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: `${index * 0.1}s` }}>
+                  <div className="text-xl md:text-2xl font-bold text-gray-700 mb-2">{stat.value}</div>
+                  <div className="text-gray-500 text-xs uppercase tracking-wider">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -122,7 +135,7 @@ const ExperienceSection = () => {
           {/* Experience Items */}
           <div className="space-y-8">
             {(activeTab === 'academic' ? academicExperience : professionalExperience).map((item, index) => (
-              <div key={index} className={`flex items-center animate-fade-in ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`} style={{ animationDelay: `${index * 0.1}s` }}>
+              <div key={index} className={`flex items-center transition-all duration-700 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: `${(index + 4) * 0.1}s` }}>
                 {/* Content */}
                 <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-6' : 'text-left pl-6'}`}>
                   <div className="bg-white rounded-lg p-4 shadow-md border border-gray-200 hover:border-gray-300 transition-all duration-300">
@@ -149,11 +162,11 @@ const ExperienceSection = () => {
         </div>
 
         {/* Skills Section */}
-        <div className="mt-12 text-center">
+        <div className={`mt-12 text-center transition-all duration-800 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '1s' }}>
           <h3 className="text-lg font-bold mb-4 text-gray-700">Core Expertise</h3>
           <div className="flex flex-wrap justify-center gap-2">
-            {['Machine Learning', 'Deep Learning', 'Computer Vision', 'NLP', 'Data Science', 'MLOps', 'Python', 'TensorFlow', 'PyTorch'].map((skill) => (
-              <Badge key={skill} variant="secondary" className="bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200 transition-colors duration-300 text-xs">
+            {['Machine Learning', 'Deep Learning', 'Computer Vision', 'NLP', 'Data Science', 'MLOps', 'Python', 'TensorFlow', 'PyTorch'].map((skill, index) => (
+              <Badge key={skill} variant="secondary" className={`bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200 transition-all duration-500 text-xs ${isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`} style={{ animationDelay: `${1.2 + index * 0.05}s` }}>
                 {skill}
               </Badge>
             ))}

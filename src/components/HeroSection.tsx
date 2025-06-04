@@ -43,7 +43,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 pt-20">
+    <div className="min-h-screen flex items-center justify-center px-6 pt-20 animate-fade-in-up">
       <div className="container mx-auto text-center">
         <div className="relative">
           {/* Floating icons */}
@@ -58,7 +58,7 @@ const HeroSection = () => {
           </div>
 
           {/* Main content */}
-          <div className="animate-fade-in">
+          <div className="animate-scale-in">
             <div className="mb-6">
               <span className="inline-block px-4 py-2 bg-gradient-to-r from-gray-200/20 to-gray-300/20 rounded-full border border-gray-300/30 text-gray-700 text-xs font-medium">
                 👋 Welcome to my portfolio
