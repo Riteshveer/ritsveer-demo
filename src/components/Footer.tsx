@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, FileText } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -11,13 +11,16 @@ const Footer = () => {
           </div>
           <div className="flex space-x-6">
             {[
-              { icon: Github, url: "https://github.com/ritesh" },
-              { icon: Linkedin, url: "https://linkedin.com/in/ritesh" },
+              { icon: Github, url: "https://github.com/Riteshveer" },
+              { icon: Linkedin, url: "https://www.linkedin.com/in/ritesh-veer-39a30328b" },
+              { icon: FileText, url: "https://docs.google.com/document/d/1xIiTj--ZNi0oyUn7_6dzGHlCEnwt19KKIfubHoRRJmo/edit?usp=sharing" },
               { icon: Mail, url: "mailto:ritesh@example.com" }
             ].map((social, index) => (
               <a
                 key={index}
                 href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-200 hover:text-gray-600 transition-all duration-300 hover:scale-110"
               >
                 <social.icon className="w-5 h-5" />
