@@ -24,7 +24,6 @@ const SkillsSection = () => {
 
   const skills = [
     { name: "Python", level: 95, category: "Programming Languages" },
-    { name: "Java (Core)", level: 60, category: "Programming Languages" },
     { name: "SQL", level: 90, category: "Programming Languages" },
     { name: "NumPy", level: 85, category: "Libraries & Frameworks" },
     { name: "Pandas", level: 88, category: "Libraries & Frameworks" },
@@ -41,8 +40,8 @@ const SkillsSection = () => {
   const knowledgeItems = [
     { name: "Java (Core)", category: "Programming Languages" },
     { name: "C", category: "Programming Languages" },
-    { name: "VS Code", category: "Tools & Platforms" },
     { name: "IntelliJ IDEA", category: "Tools & Platforms" },
+    { name: "VS Code", category: "Tools & Platforms" },
     { name: "IoT", category: "Other Skills" },
     { name: "Operating Systems", category: "Other Skills" }
   ];
@@ -81,22 +80,21 @@ const SkillsSection = () => {
           ))}
         </div>
 
-        {/* Knowledge Section - Compact */}
-        <div className="text-center mb-6">
-          <h3 className="text-lg font-bold mb-4 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
+        {/* Knowledge Section - Pill-shaped Design */}
+        <div className="text-center mb-8">
+          <h3 className="text-lg font-bold mb-8 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
             Knowledge
           </h3>
         </div>
         
-        <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-3 max-w-4xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
           {knowledgeItems.map((item, index) => (
             <div 
               key={item.name}
-              className={`bg-gray-50/50 backdrop-blur-sm rounded-lg p-3 border border-gray-200 hover:border-gray-400/50 transition-all duration-500 hover:scale-105 ${isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}
+              className={`px-6 py-3 bg-gray-100/50 backdrop-blur-sm rounded-full border border-gray-200 hover:border-gray-400/50 transition-all duration-300 hover:scale-105 animate-fade-in ${isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}
               style={{ animationDelay: `${(skills.length + index) * 0.1}s` }}
             >
-              <h4 className="text-gray-900 font-medium text-xs mb-1">{item.name}</h4>
-              <span className="text-gray-500 text-xs">{item.category}</span>
+              <span className="text-gray-700 font-medium text-sm">{item.name}</span>
             </div>
           ))}
         </div>
