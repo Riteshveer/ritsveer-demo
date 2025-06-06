@@ -25,7 +25,6 @@ const SkillsSection = () => {
   const skills = [
     { name: "Python", level: 95, category: "Programming Languages" },
     { name: "Java (Core)", level: 60, category: "Programming Languages" },
-    { name: "C", level: 75, category: "Programming Languages" },
     { name: "SQL", level: 90, category: "Programming Languages" },
     { name: "NumPy", level: 85, category: "Libraries & Frameworks" },
     { name: "Pandas", level: 88, category: "Libraries & Frameworks" },
@@ -34,13 +33,20 @@ const SkillsSection = () => {
     { name: "TensorFlow", level: 82, category: "Libraries & Frameworks" },
     { name: "Tableau", level: 85, category: "Tools & Platforms" },
     { name: "GitHub", level: 90, category: "Tools & Platforms" },
-    { name: "VS Code", level: 95, category: "Tools & Platforms" },
     { name: "Anaconda", level: 85, category: "Tools & Platforms" },
-    { name: "IntelliJ IDEA", level: 75, category: "Tools & Platforms" },
     { name: "Machine Learning", level: 85, category: "Other Skills" },
-    { name: "Statistics", level: 80, category: "Other Skills" },
-    { name: "IoT", level: 70, category: "Other Skills" },
-    { name: "Operating Systems", level: 75, category: "Other Skills" }
+    { name: "Statistics", level: 80, category: "Other Skills" }
+  ];
+
+  const knowledgeItems = [
+    { name: "Java (Core)", category: "Programming Languages" },
+    { name: "C", category: "Programming Languages" },
+    { name: "Tableau", category: "Tools & Platforms" },
+    { name: "GitHub", category: "Tools & Platforms" },
+    { name: "VS Code", category: "Tools & Platforms" },
+    { name: "IntelliJ IDEA", category: "Tools & Platforms" },
+    { name: "IoT", category: "Other Skills" },
+    { name: "Operating Systems", category: "Other Skills" }
   ];
 
   return (
@@ -55,7 +61,7 @@ const SkillsSection = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {skills.map((skill, index) => (
             <div 
               key={skill.name}
@@ -73,6 +79,26 @@ const SkillsSection = () => {
                 ></div>
               </div>
               <span className="text-gray-500 text-xs">{skill.category}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Knowledge Section */}
+        <div className="text-center mb-8">
+          <h3 className="text-lg md:text-xl font-bold mb-6 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
+            Knowledge
+          </h3>
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {knowledgeItems.map((item, index) => (
+            <div 
+              key={item.name}
+              className={`bg-gray-50/50 backdrop-blur-sm rounded-xl p-4 border border-gray-200 hover:border-gray-400/50 transition-all duration-500 hover:scale-105 ${isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}
+              style={{ animationDelay: `${(skills.length + index) * 0.1}s` }}
+            >
+              <h4 className="text-gray-900 font-semibold text-sm mb-1">{item.name}</h4>
+              <span className="text-gray-500 text-xs">{item.category}</span>
             </div>
           ))}
         </div>
