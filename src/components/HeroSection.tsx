@@ -104,19 +104,6 @@ const HeroSection = () => {
               </a>
             </div>
 
-            {/* Highlighted expertise */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {['Data Science', 'Data Analysis', 'Data Visualization', 'Data Cleaning', 'Data Mining', 'Data Pipelining', 'Statistics', 'Machine Learning'].map((skill, index) => (
-                <div 
-                  key={skill}
-                  className="px-6 py-3 bg-gray-100/50 backdrop-blur-sm rounded-full border border-gray-200 hover:border-gray-400/50 transition-all duration-300 hover:scale-105 animate-fade-in"
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  <span className="text-gray-700 font-medium text-sm">{skill}</span>
-                </div>
-              ))}
-            </div>
-
             {/* Action buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
               <Button 
