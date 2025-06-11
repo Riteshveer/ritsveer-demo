@@ -1,4 +1,5 @@
 
+
 import { Badge } from '@/components/ui/badge';
 import { useState, useEffect, useRef } from 'react';
 import { GraduationCap, Briefcase, Calendar } from 'lucide-react';
@@ -165,8 +166,8 @@ const ExperienceSection = () => {
         {/* Core Expertise Section */}
         <div className={`mt-12 text-center transition-all duration-800 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '1s' }}>
           <h3 className="text-lg font-bold mb-8 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">Core Expertise</h3>
-          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-            {['Machine Learning', 'Deep Learning', 'Computer Vision', 'NLP', 'Data Science', 'MLOps', 'Python', 'TensorFlow', 'PyTorch'].map((skill, index) => (
+          <div className="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto">
+            {['Machine Learning', 'Data Science', 'Data Analysis', 'Data Visualization', 'Data Cleaning', 'Data Mining', 'Data Pipelining', 'Statistics'].map((skill, index) => (
               <div 
                 key={skill}
                 className={`px-6 py-3 bg-gray-100/50 backdrop-blur-sm rounded-full border border-gray-200 hover:border-gray-400/50 transition-all duration-300 hover:scale-105 animate-fade-in ${isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}
@@ -183,3 +184,4 @@ const ExperienceSection = () => {
 };
 
 export default ExperienceSection;
+
