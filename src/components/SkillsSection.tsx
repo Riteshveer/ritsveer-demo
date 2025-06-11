@@ -25,6 +25,8 @@ const SkillsSection = () => {
   const skills = [
     { name: "Python", level: 95, category: "Programming Languages" },
     { name: "SQL", level: 90, category: "Programming Languages" },
+    { name: "Java (Core)", level: 70, category: "Programming Languages" },
+    { name: "C", level: 70, category: "Programming Languages" },
     { name: "NumPy", level: 85, category: "Libraries & Frameworks" },
     { name: "Pandas", level: 88, category: "Libraries & Frameworks" },
     { name: "Matplotlib", level: 80, category: "Libraries & Frameworks" },
