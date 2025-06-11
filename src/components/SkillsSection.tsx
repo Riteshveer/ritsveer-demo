@@ -32,18 +32,7 @@ const SkillsSection = () => {
     { name: "TensorFlow", level: 82, category: "Libraries & Frameworks" },
     { name: "Tableau", level: 85, category: "Tools & Platforms" },
     { name: "GitHub", level: 90, category: "Tools & Platforms" },
-    { name: "Anaconda", level: 85, category: "Tools & Platforms" },
-    { name: "Machine Learning", level: 85, category: "Other Skills" },
-    { name: "Statistics", level: 80, category: "Other Skills" }
-  ];
-
-  const knowledgeItems = [
-    { name: "Java (Core)", category: "Programming Languages" },
-    { name: "C", category: "Programming Languages" },
-    { name: "IntelliJ IDEA", category: "Tools & Platforms" },
-    { name: "VS Code", category: "Tools & Platforms" },
-    { name: "IoT", category: "Other Skills" },
-    { name: "Operating Systems", category: "Other Skills" }
+    { name: "Anaconda", level: 85, category: "Tools & Platforms" }
   ];
 
   return (
@@ -58,7 +47,7 @@ const SkillsSection = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((skill, index) => (
             <div 
               key={skill.name}
@@ -76,25 +65,6 @@ const SkillsSection = () => {
                 ></div>
               </div>
               <span className="text-gray-500 text-xs">{skill.category}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* Knowledge Section - Pill-shaped Design */}
-        <div className="text-center mb-8">
-          <h3 className="text-lg font-bold mb-8 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
-            Knowledge
-          </h3>
-        </div>
-        
-        <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-          {knowledgeItems.map((item, index) => (
-            <div 
-              key={item.name}
-              className={`px-6 py-3 bg-gray-100/50 backdrop-blur-sm rounded-full border border-gray-200 hover:border-gray-400/50 transition-all duration-300 hover:scale-105 animate-fade-in ${isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}
-              style={{ animationDelay: `${(skills.length + index) * 0.1}s` }}
-            >
-              <span className="text-gray-700 font-medium text-sm">{item.name}</span>
             </div>
           ))}
         </div>

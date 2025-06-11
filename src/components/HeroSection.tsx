@@ -106,7 +106,7 @@ const HeroSection = () => {
 
             {/* Highlighted expertise */}
             <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {['Deep Learning', 'Generative AI', 'End-to-End ML Systems'].map((skill, index) => (
+              {['Data Science', 'Data Analysis', 'Data Visualization', 'Data Cleaning', 'Data Mining', 'Data Pipelining', 'Statistics', 'Machine Learning'].map((skill, index) => (
                 <div 
                   key={skill}
                   className="px-6 py-3 bg-gray-100/50 backdrop-blur-sm rounded-full border border-gray-200 hover:border-gray-400/50 transition-all duration-300 hover:scale-105 animate-fade-in"
