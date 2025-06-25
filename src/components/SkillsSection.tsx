@@ -1,8 +1,14 @@
 
 import { useState, useEffect, useRef } from 'react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const SkillsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [expandedCategories, setExpandedCategories] = useState<{ [key: string]: boolean }>({
+    programming: true, // Start with programming expanded
+    datascience: false,
+    computing: false
+  });
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -22,51 +28,88 @@ const SkillsSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const skills = [
-    { name: "Python", level: 95, category: "Programming Languages" },
-    { name: "SQL", level: 90, category: "Programming Languages" },
-    { name: "Java (Core)", level: 70, category: "Programming Languages" },
-    { name: "C", level: 70, category: "Programming Languages" },
-    { name: "NumPy", level: 85, category: "Libraries & Frameworks" },
-    { name: "Pandas", level: 88, category: "Libraries & Frameworks" },
-    { name: "Matplotlib", level: 80, category: "Libraries & Frameworks" },
-    { name: "Seaborn", level: 80, category: "Libraries & Frameworks" },
-    { name: "TensorFlow", level: 82, category: "Libraries & Frameworks" },
-    { name: "Tableau", level: 85, category: "Tools & Platforms" },
-    { name: "GitHub", level: 90, category: "Tools & Platforms" },
-    { name: "Anaconda", level: 85, category: "Tools & Platforms" }
+  const toggleCategory = (category: string) => {
+    setExpandedCategories(prev => ({
+      ...prev,
+      [category]: !prev[category]
+    }));
+  };
+
+  const skillCategories = [
+    {
+      id: 'datascience',
+      name: 'Data Science & AI',
+      experience: '4+ Years XP',
+      icon: '🧠',
+      skills: ['Python', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 'TensorFlow']
+    },
+    {
+      id: 'programming',
+      name: 'Programming',
+      experience: '3+ Years XP',
+      icon: '{ }',
+      skills: ['Python', 'SQL', 'C++/C', 'Java']
+    },
+    {
+      id: 'computing',
+      name: 'Computing',
+      experience: '3+ Years XP',
+      icon: '☁️',
+      skills: ['Tableau', 'GitHub', 'Anaconda']
+    }
   ];
 
   return (
     <section ref={sectionRef} id="skills" className={`relative z-10 py-16 px-6 transition-all duration-1000 ${isVisible ? 'animate-slide-in-right' : 'opacity-0 translate-x-[50px]'}`}>
-      <div className="container mx-auto">
+      <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-12">
-          <h2 className="text-xl md:text-2xl font-bold mb-4 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
-            Technical Skills
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
+            Skills
           </h2>
-          <p className="text-sm text-gray-600 max-w-3xl mx-auto">
-            Comprehensive expertise across programming languages, frameworks, and development tools
-          </p>
+          <p className="text-gray-600">My technical & other skills</p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skills.map((skill, index) => (
+        <div className="space-y-4">
+          {skillCategories.map((category, index) => (
             <div 
-              key={skill.name}
-              className={`bg-gray-50/50 backdrop-blur-sm rounded-xl p-6 border border-gray-200 hover:border-gray-400/50 transition-all duration-500 hover:scale-105 ${isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}
+              key={category.id}
+              className={`bg-gray-50/50 backdrop-blur-sm rounded-xl border border-gray-200 hover:border-gray-400/50 transition-all duration-500 ${isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex justify-between items-center mb-2">
-                <h3 className="text-gray-900 font-semibold text-sm">{skill.name}</h3>
-                <span className="text-gray-700 text-xs">{skill.level}%</span>
+              <div 
+                className="flex items-center justify-between p-6 cursor-pointer"
+                onClick={() => toggleCategory(category.id)}
+              >
+                <div className="flex items-center gap-4">
+                  <div className="text-2xl">{category.icon}</div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900">{category.name}</h3>
+                    <p className="text-sm text-gray-500">{category.experience}</p>
+                  </div>
+                </div>
+                <div className="text-blue-600">
+                  {expandedCategories[category.id] ? (
+                    <ChevronUp className="w-5 h-5" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5" />
+                  )}
+                </div>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
-                <div 
-                  className={`bg-gradient-to-r from-gray-600 to-gray-800 h-2 rounded-full transition-all duration-1000 ${isVisible ? '' : 'w-0'}`}
-                  style={{ width: isVisible ? `${skill.level}%` : '0%', transitionDelay: `${index * 0.1}s` }}
-                ></div>
-              </div>
-              <span className="text-gray-500 text-xs">{skill.category}</span>
+              
+              {expandedCategories[category.id] && (
+                <div className="px-6 pb-6">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {category.skills.map((skill, skillIndex) => (
+                      <div 
+                        key={skill}
+                        className="bg-white rounded-lg p-4 border border-gray-100 hover:border-blue-200 transition-all duration-300"
+                      >
+                        <div className="text-gray-900 font-medium text-sm">{skill}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
