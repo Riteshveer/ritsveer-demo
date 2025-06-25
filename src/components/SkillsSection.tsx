@@ -7,11 +7,8 @@ const SkillsSection = () => {
   const [expandedCategories, setExpandedCategories] = useState<{ [key: string]: boolean }>({
     programming: true,
     datascience: false,
-    frontend: false,
-    backend: false,
     visualization: false,
-    computing: false,
-    misc: false
+    computing: false
   });
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -104,7 +101,7 @@ const SkillsSection = () => {
           {skillCategories.map((category, index) => (
             <div 
               key={category.id}
-              className={`bg-gray-50/50 backdrop-blur-sm rounded-xl border border-gray-200 hover:border-purple-300 transition-all duration-500 ${isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}
+              className={`bg-gray-50/50 backdrop-blur-sm rounded-xl border border-gray-200 hover:border-blue-300 transition-all duration-500 ${isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div 
@@ -117,7 +114,7 @@ const SkillsSection = () => {
                     <h3 className="text-lg font-semibold text-gray-900">{category.name}</h3>
                   </div>
                 </div>
-                <div className="text-purple-600">
+                <div className="text-blue-600">
                   {expandedCategories[category.id] ? (
                     <ChevronUp className="w-5 h-5" />
                   ) : (
@@ -137,7 +134,7 @@ const SkillsSection = () => {
                         <div className="relative">
                           <div className="w-full bg-gray-200 rounded-full h-2">
                             <div 
-                              className="bg-gradient-to-r from-purple-500 to-purple-600 h-2 rounded-full transition-all duration-1500 ease-out"
+                              className="bg-gradient-to-r from-blue-400 to-blue-500 h-2 rounded-full transition-all duration-1500 ease-out"
                               style={{ 
                                 width: isVisible ? `${skill.level}%` : '0%',
                                 transitionDelay: `${skillIndex * 0.1}s`
