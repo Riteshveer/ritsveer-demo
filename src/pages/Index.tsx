@@ -4,7 +4,7 @@ import { ArrowUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import HeroSection from '@/components/HeroSection';
 import Navigation from '@/components/Navigation';
-import ExperienceSection from '@/components/ExperienceSection';
+import AboutSection from '@/components/AboutSection';
 import SkillsSection from '@/components/SkillsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import ServicesSection from '@/components/ServicesSection';
@@ -41,9 +41,9 @@ const Index = () => {
         <HeroSection />
       </section>
 
-      {/* Experience & Credentials */}
-      <section id="experience" className="relative z-10">
-        <ExperienceSection />
+      {/* About Section */}
+      <section id="about" className="relative z-10">
+        <AboutSection />
       </section>
 
       {/* Skills Section */}
