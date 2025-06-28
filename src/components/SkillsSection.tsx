@@ -1,6 +1,5 @@
-
 import { useState, useEffect, useRef } from 'react';
-import { ChevronDown, ChevronUp, Brain, Code, Server, Wave } from 'lucide-react';
+import { ChevronDown, ChevronUp, Brain, Code, Server, Waves } from 'lucide-react';
 
 const SkillsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -43,7 +42,7 @@ const SkillsSection = () => {
       id: 'datascience',
       name: 'Data Science & AI',
       experience: '4+ Years XP',
-      icon: <Brain className="w-6 h-6 text-purple-600" />,
+      icon: <Brain className="w-8 h-8 text-blue-600" />,
       skills: [
         { name: 'Python', level: 95 },
         { name: 'NumPy', level: 90 },
@@ -55,7 +54,7 @@ const SkillsSection = () => {
       id: 'frontend',
       name: 'Front End',
       experience: '2+ Years XP',
-      icon: <Code className="w-6 h-6 text-purple-600" />,
+      icon: <Code className="w-8 h-8 text-orange-500" />,
       skills: [
         { name: 'React', level: 85 },
         { name: 'JavaScript', level: 90 },
@@ -67,7 +66,7 @@ const SkillsSection = () => {
       id: 'programming',
       name: 'Programming',
       experience: '3+ Years XP',
-      icon: <Code className="w-6 h-6 text-purple-600" />,
+      icon: <Code className="w-8 h-8 text-green-500" />,
       skills: [
         { name: 'Python', level: 95 },
         { name: 'SQL', level: 95 },
@@ -79,7 +78,7 @@ const SkillsSection = () => {
       id: 'backend',
       name: 'BackEnd',
       experience: '3+ Years XP',
-      icon: <Server className="w-6 h-6 text-purple-600" />,
+      icon: <Server className="w-8 h-8 text-purple-600" />,
       skills: [
         { name: 'Node.js', level: 85 },
         { name: 'Express', level: 80 },
@@ -91,7 +90,7 @@ const SkillsSection = () => {
       id: 'computing',
       name: 'Computing',
       experience: '3+ Years XP',
-      icon: <Server className="w-6 h-6 text-purple-600" />,
+      icon: <Server className="w-8 h-8 text-gray-600" />,
       skills: [
         { name: 'GitHub', level: 90 },
         { name: 'Anaconda', level: 85 },
@@ -103,7 +102,7 @@ const SkillsSection = () => {
       id: 'misc',
       name: 'Misc',
       experience: '4+ Years XP',
-      icon: <Wave className="w-6 h-6 text-purple-600" />,
+      icon: <Waves className="w-8 h-8 text-teal-500" />,
       skills: [
         { name: 'Git', level: 90 },
         { name: 'Figma', level: 75 },
@@ -127,7 +126,11 @@ const SkillsSection = () => {
           {skillCategories.map((category, index) => (
             <div 
               key={category.id}
-              className={`bg-gray-50/50 backdrop-blur-sm rounded-xl hover:shadow-lg transition-all duration-300 ${isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}
+              className={`bg-white/50 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 ${
+                isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'
+              } ${
+                expandedCategories[category.id] ? 'transform translate-y-2' : ''
+              }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div 
@@ -135,7 +138,7 @@ const SkillsSection = () => {
                 onClick={() => toggleCategory(category.id)}
               >
                 <div className="flex items-center gap-4">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-purple-100">
+                  <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 shadow-md">
                     {category.icon}
                   </div>
                   <div>
@@ -143,7 +146,7 @@ const SkillsSection = () => {
                     <p className="text-sm text-gray-500">{category.experience}</p>
                   </div>
                 </div>
-                <div className="text-purple-600">
+                <div className="text-gray-600">
                   {expandedCategories[category.id] ? (
                     <ChevronUp className="w-5 h-5" />
                   ) : (
@@ -152,7 +155,7 @@ const SkillsSection = () => {
                 </div>
               </div>
               
-              <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
+              <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
                 expandedCategories[category.id] 
                   ? 'max-h-96 opacity-100' 
                   : 'max-h-0 opacity-0'
@@ -168,7 +171,7 @@ const SkillsSection = () => {
                         <div className="relative">
                           <div className="w-full bg-gray-200 rounded-full h-2">
                             <div 
-                              className="bg-gradient-to-r from-purple-400 to-purple-600 h-2 rounded-full transition-all duration-1500 ease-out"
+                              className="bg-gradient-to-r from-blue-300 to-blue-500 h-2 rounded-full transition-all duration-1500 ease-out"
                               style={{ 
                                 width: isVisible && expandedCategories[category.id] ? `${skill.level}%` : '0%',
                                 transitionDelay: `${skillIndex * 0.1}s`
