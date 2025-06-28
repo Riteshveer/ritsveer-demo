@@ -58,11 +58,11 @@ const HeroSection = () => {
 
           {/* Main content */}
           <div className="animate-scale-in">
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 bg-clip-text text-transparent leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold mb-6 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 bg-clip-text text-transparent leading-tight">
               Hi, I'm <span className="text-gray-700">Ritesh</span>
             </h1>
             
-            <div className="text-lg md:text-xl lg:text-xl mb-8 text-gray-600 h-12 flex items-center justify-center">
+            <div className="text-xl md:text-2xl lg:text-2xl mb-8 text-gray-600 h-12 flex items-center justify-center">
               <span className="mr-3">I'm a</span>
               <span className="text-gray-700 font-semibold min-w-fit">
                 {displayText}
@@ -70,7 +70,7 @@ const HeroSection = () => {
               </span>
             </div>
             
-            <p className="text-sm md:text-base text-gray-500 max-w-3xl mx-auto mb-12 leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto mb-12 leading-relaxed">
               Specializing in building <span className="text-gray-700 font-semibold">intelligent systems</span> with 
               <span className="text-gray-600 font-semibold"> AI, ML, and data science</span>. 
               Transforming complex problems into elegant solutions.
@@ -108,14 +108,14 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-800 hover:to-gray-950 text-white px-8 py-4 text-sm font-semibold rounded-full shadow-lg hover:shadow-gray-500/25 transition-all duration-300 hover:scale-105"
+                className="bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-800 hover:to-gray-950 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-gray-500/25 transition-all duration-300 hover:scale-105"
               >
                 View My Projects
               </Button>
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-gray-400/50 text-gray-700 hover:bg-gray-100/10 px-8 py-4 text-sm font-semibold rounded-full transition-all duration-300 hover:scale-105"
+                className="border-gray-400/50 text-gray-700 hover:bg-gray-100/10 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
               >
                 Download Resume
               </Button>

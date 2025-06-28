@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="relative z-10 py-12 px-6 border-t border-gray-200">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="text-lg font-bold bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent mb-4 md:mb-0">
+          <div className="text-xl md:text-2xl font-bold bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent mb-4 md:mb-0">
             Ritesh
           </div>
           <div className="flex space-x-6">
@@ -27,7 +27,7 @@ const Footer = () => {
               </a>
             ))}
           </div>
-          <div className="text-gray-500 mt-4 md:mt-0 text-xs">
+          <div className="text-gray-500 mt-4 md:mt-0 text-lg">
             © 2024 Ritesh. All rights reserved.
           </div>
         </div>

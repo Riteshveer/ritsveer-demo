@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from 'react';
 import { ChevronDown, ChevronUp, Brain, Code, Server, Waves } from 'lucide-react';
 
@@ -119,7 +120,7 @@ const SkillsSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
             Skills
           </h2>
-          <p className="text-gray-600">My technical & other skills</p>
+          <p className="text-lg text-gray-600">My technical & other skills</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -142,8 +143,8 @@ const SkillsSection = () => {
                     {category.icon}
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">{category.name}</h3>
-                    <p className="text-sm text-gray-500">{category.experience}</p>
+                    <h3 className="text-xl font-semibold text-gray-900">{category.name}</h3>
+                    <p className="text-lg text-gray-500">{category.experience}</p>
                   </div>
                 </div>
                 <div className="text-gray-600">
@@ -165,8 +166,8 @@ const SkillsSection = () => {
                     {category.skills.map((skill, skillIndex) => (
                       <div key={skill.name} className="space-y-2">
                         <div className="flex justify-between items-center">
-                          <span className="text-gray-800 font-medium text-sm">{skill.name}</span>
-                          <span className="text-gray-600 text-sm">{skill.level}%</span>
+                          <span className="text-gray-800 font-medium text-lg">{skill.name}</span>
+                          <span className="text-gray-600 text-lg">{skill.level}%</span>
                         </div>
                         <div className="relative">
                           <div className="w-full bg-gray-200 rounded-full h-2">

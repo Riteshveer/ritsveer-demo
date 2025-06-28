@@ -55,10 +55,10 @@ const ServicesSection = () => {
     <section ref={sectionRef} id="services" className={`relative z-10 py-16 px-6 transition-all duration-1000 ${isVisible ? 'animate-slide-in-left' : 'opacity-0 translate-x-[-50px]'}`}>
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-xl md:text-2xl font-bold mb-4 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
             Technical Capabilities
           </h2>
-          <p className="text-sm text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Comprehensive AI/ML expertise across the entire development lifecycle
           </p>
         </div>
