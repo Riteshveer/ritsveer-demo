@@ -90,7 +90,7 @@ const ContactSection = () => {
     <section ref={sectionRef} id="contact" className={`relative z-10 py-16 px-6 transition-all duration-1000 ${isVisible ? 'animate-slide-in-right' : 'opacity-0 translate-x-[50px]'}`}>
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-xl md:text-2xl font-bold mb-4 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
             Get In Touch
           </h2>
           <p className="text-sm text-gray-600 max-w-3xl mx-auto">
@@ -103,7 +103,7 @@ const ContactSection = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-gray-300/20 to-gray-500/20 rounded-2xl blur-xl"></div>
             <Card className="relative bg-gray-50/50 backdrop-blur-sm border-gray-200">
               <CardHeader>
-                <CardTitle className="text-gray-700 text-base">Send me a message</CardTitle>
+                <CardTitle className="text-gray-700 text-lg">Send me a message</CardTitle>
                 <CardDescription className="text-gray-600 text-sm">
                   Whether you have a specific project in mind or want to explore AI/ML possibilities, 
                   I'm always excited to discuss innovative solutions.
@@ -117,7 +117,7 @@ const ContactSection = () => {
                       placeholder="Your Name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="bg-white/70"
+                      className="bg-white/70 text-sm"
                     />
                   </div>
                   <div>
@@ -127,7 +127,7 @@ const ContactSection = () => {
                       placeholder="Your Email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="bg-white/70"
+                      className="bg-white/70 text-sm"
                     />
                   </div>
                   <div>
@@ -136,7 +136,7 @@ const ContactSection = () => {
                       placeholder="Your Message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      className="bg-white/70 min-h-[100px]"
+                      className="bg-white/70 min-h-[100px] text-sm"
                     />
                   </div>
                   <Button 
