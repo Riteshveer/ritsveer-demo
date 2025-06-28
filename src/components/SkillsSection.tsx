@@ -1,16 +1,10 @@
+
 import { useState, useEffect, useRef } from 'react';
-import { ChevronDown, ChevronUp, Brain, Code, Server, Waves } from 'lucide-react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const SkillsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [expandedCategories, setExpandedCategories] = useState<{ [key: string]: boolean }>({
-    programming: true,
-    datascience: false,
-    frontend: false,
-    backend: false,
-    computing: false,
-    misc: false
-  });
+  const [expandedCategories, setExpandedCategories] = useState<{ [key: string]: boolean }>({});
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -41,8 +35,6 @@ const SkillsSection = () => {
     {
       id: 'datascience',
       name: 'Data Science & AI',
-      experience: '4+ Years XP',
-      icon: <Brain className="w-8 h-8 text-blue-600" />,
       skills: [
         { name: 'Python', level: 95 },
         { name: 'NumPy', level: 90 },
@@ -53,8 +45,6 @@ const SkillsSection = () => {
     {
       id: 'frontend',
       name: 'Front End',
-      experience: '2+ Years XP',
-      icon: <Code className="w-8 h-8 text-orange-500" />,
       skills: [
         { name: 'React', level: 85 },
         { name: 'JavaScript', level: 90 },
@@ -65,8 +55,6 @@ const SkillsSection = () => {
     {
       id: 'programming',
       name: 'Programming',
-      experience: '3+ Years XP',
-      icon: <Code className="w-8 h-8 text-green-500" />,
       skills: [
         { name: 'Python', level: 95 },
         { name: 'SQL', level: 95 },
@@ -77,8 +65,6 @@ const SkillsSection = () => {
     {
       id: 'backend',
       name: 'BackEnd',
-      experience: '3+ Years XP',
-      icon: <Server className="w-8 h-8 text-purple-600" />,
       skills: [
         { name: 'Node.js', level: 85 },
         { name: 'Express', level: 80 },
@@ -89,8 +75,6 @@ const SkillsSection = () => {
     {
       id: 'computing',
       name: 'Computing',
-      experience: '3+ Years XP',
-      icon: <Server className="w-8 h-8 text-gray-600" />,
       skills: [
         { name: 'GitHub', level: 90 },
         { name: 'Anaconda', level: 85 },
@@ -101,8 +85,6 @@ const SkillsSection = () => {
     {
       id: 'misc',
       name: 'Misc',
-      experience: '4+ Years XP',
-      icon: <Waves className="w-8 h-8 text-teal-500" />,
       skills: [
         { name: 'Git', level: 90 },
         { name: 'Figma', level: 75 },
@@ -114,7 +96,7 @@ const SkillsSection = () => {
 
   return (
     <section ref={sectionRef} id="skills" className={`relative z-10 py-16 px-6 transition-all duration-1000 ${isVisible ? 'animate-slide-in-right' : 'opacity-0 translate-x-[50px]'}`}>
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
             Skills
@@ -122,7 +104,7 @@ const SkillsSection = () => {
           <p className="text-gray-600">My technical & other skills</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="space-y-4">
           {skillCategories.map((category, index) => (
             <div 
               key={category.id}
@@ -134,18 +116,10 @@ const SkillsSection = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div 
-                className="flex items-center justify-between p-6 cursor-pointer"
+                className="flex items-center justify-between p-6 cursor-pointer hover:bg-white/20 rounded-xl transition-all duration-300"
                 onClick={() => toggleCategory(category.id)}
               >
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 shadow-md">
-                    {category.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900">{category.name}</h3>
-                    <p className="text-sm text-gray-500">{category.experience}</p>
-                  </div>
-                </div>
+                <h3 className="text-xl font-semibold text-gray-900">{category.name}</h3>
                 <div className="text-gray-600">
                   {expandedCategories[category.id] ? (
                     <ChevronUp className="w-5 h-5" />
